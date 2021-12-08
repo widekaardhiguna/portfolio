@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["about"],{f820:function(n,e,t){"use strict";t.r(e);var o=t("7a23"),c={class:"about"},a=Object(o["e"])("h1",null,"Hello World !! :D",-1),r=[a];function u(n,e){return Object(o["q"])(),Object(o["d"])("div",c,r)}var b=t("6b0d"),d=t.n(b);const s={},l=d()(s,[["render",u]]);e["default"]=l}}]);
+//# sourceMappingURL=about.7354daad.js.map
