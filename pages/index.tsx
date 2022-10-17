@@ -1,8 +1,5 @@
 import { Button } from "components"
 import { MainLayout } from "layouts"
-import type { NextPage } from "next"
-import Head from "next/head"
-import Image from "next/image"
 import { styled } from "theme/config"
 import { NextPageWithLayout } from "./_app"
 

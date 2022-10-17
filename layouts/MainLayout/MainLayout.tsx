@@ -1,3 +1,5 @@
+import { Drawer } from "components"
+import { useState } from "react"
 import { styled, theme } from "theme/config"
 import { Content } from "./Content"
 import { Sidebar } from "./Sidebar"
@@ -35,11 +37,16 @@ const Wrapper = styled("div", {
 })
 
 export const MainLayout = ({ children }: MainLayoutProps) => {
+  const [showDrawer, setShowDrawer] = useState(false)
+
   return (
     <Wrapper>
       <Container>
         <div>
           <Sidebar />
+          <Drawer show={showDrawer}>
+            <Sidebar />
+          </Drawer>
         </div>
         <Content>{children}</Content>
       </Container>
