@@ -1,5 +1,6 @@
+import { IconMenu2 } from "@tabler/icons"
 import colorAlpha from "color-alpha"
-import { Drawer } from "components"
+import { Button, Drawer, IconButton } from "components"
 import { useState } from "react"
 import { styled, theme } from "theme/config"
 import { Content } from "./Content"
@@ -36,6 +37,9 @@ const Wrapper = styled("div", {
         display: "block",
       },
     },
+    "& > .toggle-drawer-button": {
+      display: "none",
+    },
   },
 
   "@xl": {
@@ -54,10 +58,21 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
 
   return (
     <Wrapper>
+      <IconButton
+        className="toggle-drawer-button"
+        onClick={() => setShowDrawer((prev) => !prev)}
+        css={{
+          position: "fixed",
+          top: 10,
+          left: 10,
+        }}
+      >
+        <IconMenu2 color="black" />
+      </IconButton>
       <div className="container">
         <div className="side">
           <Sidebar />
-          <Drawer show={showDrawer}>
+          <Drawer show={showDrawer} onClose={() => setShowDrawer(false)}>
             <Sidebar />
           </Drawer>
         </div>
