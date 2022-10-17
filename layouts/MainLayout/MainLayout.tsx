@@ -8,16 +8,10 @@ interface MainLayoutProps {
   children?: React.ReactNode
 }
 
-const Nav = styled("nav", {
-  backgroundColor: theme.colors.primary,
-})
-
-const Container = styled("div")
-
 const Wrapper = styled("div", {
   backgroundColor: "#404040",
   height: "100vh",
-  [`& ${Container}`]: {
+  [`& > .container`]: {
     backgroundColor: theme.colors.background,
     height: "100%",
     overflow: "auto",
@@ -28,7 +22,7 @@ const Wrapper = styled("div", {
   "@xl": {
     display: "grid",
     placeContent: "center",
-    [`& ${Container}`]: {
+    [`& > .container`]: {
       width: 1400,
       height: "95vh",
       borderRadius: 8,
@@ -41,7 +35,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
 
   return (
     <Wrapper>
-      <Container>
+      <div className="container">
         <div>
           <Sidebar />
           <Drawer show={showDrawer}>
@@ -49,7 +43,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
           </Drawer>
         </div>
         <Content>{children}</Content>
-      </Container>
+      </div>
     </Wrapper>
   )
 }
