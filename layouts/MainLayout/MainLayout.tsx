@@ -1,4 +1,5 @@
 import { styled, theme } from "theme/config"
+import { Content } from "./Content"
 import { Sidebar } from "./Sidebar"
 
 interface MainLayoutProps {
@@ -40,7 +41,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
         <div>
           <Sidebar />
         </div>
-        <div>s</div>
+        <Content>{children}</Content>
       </Container>
     </Wrapper>
   )

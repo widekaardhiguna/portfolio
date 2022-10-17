@@ -6,28 +6,20 @@ export type ButtonProps = VariantProps<typeof Button>
 export const Button = styled("button", {
   border: "none",
   borderRadius: 8,
-  color: "white",
   fontSize: "1rem",
+  backgroundColor: theme.colors.primary,
+  color: theme.colors.dark,
   variants: {
-    color: {
-      primary: {
-        backgroundColor: theme.colors.primary,
-      },
-      secondary: {
-        backgroundColor: theme.colors.secondary,
-      },
-    },
     size: {
       small: {
         padding: "0.25em 0.5em",
       },
       normal: {
-        padding: "0.5em 1em",
+        padding: "0.7em 1.2em",
       },
     },
   },
   defaultVariants: {
-    color: "primary",
     size: "normal",
   },
 })
