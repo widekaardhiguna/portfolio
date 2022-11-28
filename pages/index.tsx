@@ -1,7 +1,7 @@
 import { Button } from "components"
 import { MainLayout } from "layouts"
 import { styled } from "theme/config"
-import { NextPageWithLayout } from "./_app"
+import { NextPageWithLayout } from "pages/_app"
 
 const Root = styled("div", {
   padding: "3rem",
