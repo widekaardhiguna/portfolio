@@ -63,8 +63,8 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
         onClick={() => setShowDrawer((prev) => !prev)}
         css={{
           position: "fixed",
-          top: 10,
-          left: 10,
+          top: 15,
+          left: 15,
         }}
       >
         <IconMenu2 color="black" />

@@ -1,7 +1,12 @@
 import colorAlpha from "color-alpha"
 import { Portal } from "components/Portal"
 import { useId } from "react"
-import { styled, theme } from "theme/config"
+import { keyframes, styled, theme } from "theme/config"
+
+const fadeIn = keyframes({
+  "0%": { transform: "translate(-250px, 0px)" },
+  "100%": { transform: "translate(0px, 0px)" },
+})
 
 export const Root = styled("div", {
   position: "fixed",
@@ -9,6 +14,9 @@ export const Root = styled("div", {
   backgroundColor: colorAlpha(theme.colors.dark.value, 0.3),
   display: "grid",
   gridTemplateColumns: "auto 1fr",
+  "& > .side": {
+    animation: `${fadeIn} 250ms ease`,
+  },
 })
 
 interface DrawerProps {
@@ -24,7 +32,7 @@ export const Drawer = ({ children, show = false, onClose }: DrawerProps) => {
     <Portal wrapperId={id}>
       {show && (
         <Root>
-          {children}
+          <div className="side">{children}</div>
           <div onClick={() => onClose?.()}></div>
         </Root>
       )}
