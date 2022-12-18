@@ -1,11 +1,11 @@
 import { styled } from "theme/config"
+import type * as Stitches from "@stitches/react"
+import { ComponentPropsWithoutRef } from "react"
 
-interface ContainerProps {
-  children?: React.ReactNode
-}
+export const Container = styled("div", {
+  maxWidth: 1000,
+  margin: "0 auto",
+})
 
-const Root = styled("div", {})
-
-export const Container = ({ children }: ContainerProps) => {
-  return <Root>{children}</Root>
-}
+export type ContainerProps = Stitches.VariantProps<typeof Container> &
+  ComponentPropsWithoutRef<typeof Container>

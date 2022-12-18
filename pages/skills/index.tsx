@@ -3,24 +3,23 @@ import { MainLayout } from "layouts"
 import { NextPageWithLayout } from "pages/_app"
 import { styled } from "theme/config"
 import Image from "next/future/image"
-import htmlLogo from "public/html-logo.png"
-import cssLogo from "public/css-logo.png"
-import jsLogo from "public/js-logo.png"
-import tsLogo from "public/ts-logo.png"
-import nodeLogo from "public/node-logo.png"
-import reactLogo from "public/react-logo.png"
-import viteLogo from "public/vite-logo.svg"
-import zustandLogo from "public/zustand-logo.png"
-import muiLogo from "public/mui-logo.svg"
-import axiosLogo from "public/axios-logo.svg"
-import reactRouterLogo from "public/react-router-logo.svg"
-import reactQueryLogo from "public/react-query-logo.svg"
-import emotionLogo from "public/emotion-logo.png"
-import nextLogo from "public/next-logo.png"
-import expressLogo from "public/express-logo.png"
-import gitLogo from "public/git-logo.png"
-import githubLogo from "public/github-logo.png"
-import dockerLogo from "public/docker-logo.png"
+import htmlLogo from "public/logo/html-logo.png"
+import cssLogo from "public/logo/css-logo.png"
+import jsLogo from "public/logo/js-logo.png"
+import tsLogo from "public/logo/ts-logo.png"
+import nodeLogo from "public/logo/node-logo.png"
+import reactLogo from "public/logo/react-logo.png"
+import viteLogo from "public/logo/vite-logo.svg"
+import zustandLogo from "public/logo/zustand-logo.png"
+import muiLogo from "public/logo/mui-logo.svg"
+import reactRouterLogo from "public/logo/react-router-logo.svg"
+import reactQueryLogo from "public/logo/react-query-logo.svg"
+import emotionLogo from "public/logo/emotion-logo.png"
+import nextLogo from "public/logo/next-logo.png"
+import expressLogo from "public/logo/express-logo.png"
+import gitLogo from "public/logo/git-logo.png"
+import githubLogo from "public/logo/github-logo.png"
+import dockerLogo from "public/logo/docker-logo.png"
 
 const Root = styled("div", {
   paddingTop: "6rem",
@@ -64,7 +63,7 @@ const List = styled("ul", {
   },
 })
 
-const Home: NextPageWithLayout = () => {
+const Skills: NextPageWithLayout = () => {
   return (
     <Root>
       <Text as="h1" className="title">
@@ -299,6 +298,6 @@ const Home: NextPageWithLayout = () => {
   )
 }
 
-Home.getLayout = (page) => <MainLayout>{page}</MainLayout>
+Skills.getLayout = (page) => <MainLayout>{page}</MainLayout>
 
-export default Home
+export default Skills
