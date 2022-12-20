@@ -1,4 +1,4 @@
-import { Button, Text, Collapsed, Container } from "components"
+import { Button, Text, Collapsed, Container, TitlePage } from "components"
 import { MainLayout } from "layouts"
 import { NextPageWithLayout } from "pages/_app"
 import { styled } from "theme/config"
@@ -19,12 +19,10 @@ import coster2report from "public/projects/coster_v2/report.png"
 const Works: NextPageWithLayout = () => {
   return (
     <Root>
-      <Text as="h1" className="title">
-        Works
-      </Text>
-      <Text as="p" className="title-description">
-        Projects that I had experience with
-      </Text>
+      <TitlePage
+        title="Works"
+        description="Projects that I had experience with"
+      />
       <Container as="section" className="project">
         <Text as="h2" className="subtitle">
           Coster V.3
@@ -99,15 +97,6 @@ export default Works
 
 const Root = styled("div", {
   margin: "0 1rem",
-  paddingTop: "6rem",
-  "& > .title": {
-    textAlign: "center",
-  },
-  "& > .title-description": {
-    textAlign: "center",
-    marginTop: 0,
-    marginBottom: "2em",
-  },
   "& > .project": {
     marginBottom: "2rem",
     "& > .subtitle": {

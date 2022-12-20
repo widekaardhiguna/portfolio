@@ -1,4 +1,4 @@
-import { Button, Text, Collapsed } from "components"
+import { Button, Text, Collapsed, TitlePage } from "components"
 import { MainLayout } from "layouts"
 import { NextPageWithLayout } from "pages/_app"
 import { styled } from "theme/config"
@@ -21,57 +21,13 @@ import gitLogo from "public/logo/git-logo.png"
 import githubLogo from "public/logo/github-logo.png"
 import dockerLogo from "public/logo/docker-logo.png"
 
-const Root = styled("div", {
-  paddingTop: "6rem",
-  "& > .title": {
-    textAlign: "center",
-  },
-  "& > .title-description": {
-    textAlign: "center",
-    marginTop: 0,
-    marginBottom: "2em",
-  },
-  "& > .skills": {
-    "& > .skill-section": {
-      fontSize: "1.3rem",
-      paddingLeft: "1rem",
-      marginTop: "0.8rem",
-      marginBottom: "0.8rem",
-    },
-  },
-})
-
-const BodyWrapper = styled("div", {
-  padding: "0.5rem 1rem",
-  fontSize: "0.925rem",
-  display: "flex",
-  flexDirection: "column",
-  gap: "0.4rem",
-})
-
-const List = styled("ul", {
-  listStyleType: "none",
-  margin: 0,
-  paddingLeft: "0.4rem",
-  display: "flex",
-  flexDirection: "column",
-  gap: "0.7rem",
-  "& > li": {
-    display: "flex",
-    alignItems: "center",
-    gap: "0.6rem",
-  },
-})
-
 const Skills: NextPageWithLayout = () => {
   return (
     <Root>
-      <Text as="h1" className="title">
-        Skills
-      </Text>
-      <Text as="p" className="title-description">
-        Tools that I use often to support my work
-      </Text>
+      <TitlePage
+        title="Skills"
+        description="Tools that I use often to support my work"
+      />
       <section className="skills">
         <Text as="h2" className="skill-section">
           Fundamental
@@ -301,3 +257,36 @@ const Skills: NextPageWithLayout = () => {
 Skills.getLayout = (page) => <MainLayout>{page}</MainLayout>
 
 export default Skills
+
+const Root = styled("div", {
+  "& > .skills": {
+    "& > .skill-section": {
+      fontSize: "1.3rem",
+      paddingLeft: "1rem",
+      marginTop: "0.8rem",
+      marginBottom: "0.8rem",
+    },
+  },
+})
+
+const BodyWrapper = styled("div", {
+  padding: "0.5rem 1rem",
+  fontSize: "0.925rem",
+  display: "flex",
+  flexDirection: "column",
+  gap: "0.4rem",
+})
+
+const List = styled("ul", {
+  listStyleType: "none",
+  margin: 0,
+  paddingLeft: "0.4rem",
+  display: "flex",
+  flexDirection: "column",
+  gap: "0.7rem",
+  "& > li": {
+    display: "flex",
+    alignItems: "center",
+    gap: "0.6rem",
+  },
+})
