@@ -1,4 +1,10 @@
-import { Button, Text, Collapsed, Container, TitlePage } from "components"
+import {
+  Text,
+  Container,
+  TitlePage,
+  DialogImage,
+  DialogImageProps,
+} from "components"
 import { MainLayout } from "layouts"
 import { NextPageWithLayout } from "pages/_app"
 import { styled } from "theme/config"
@@ -16,7 +22,19 @@ import coster2template from "public/projects/coster_v2/template.png"
 import coster2ticket from "public/projects/coster_v2/ticket.png"
 import coster2report from "public/projects/coster_v2/report.png"
 
+import { useState } from "react"
+
+type ImageOptions = {
+  alt: DialogImageProps["ImageProps"]["alt"]
+  src: DialogImageProps["ImageProps"]["src"]
+}
 const Works: NextPageWithLayout = () => {
+  const [showDialog, setShowDialog] = useState(false)
+  const [imageOptions, setImageOptions] = useState<ImageOptions>({
+    alt: "",
+    src: "",
+  })
+
   return (
     <Root>
       <TitlePage
@@ -41,27 +59,21 @@ const Works: NextPageWithLayout = () => {
           React, Node JS (as proxy), and Typescript as their core technology.
         </Text>
         <Grid>
-          <div className="grid-item">
-            <Image src={coster3chatting} alt="chatting UI" />
-          </div>
-          <div className="grid-item">
-            <Image src={coster3chart2} alt="chart UI" />
-          </div>
-          <div className="grid-item">
-            <Image src={coster3login} alt="login UI" />
-          </div>
-          <div className="grid-item">
-            <Image src={coster3chart} alt="chart UI" />
-          </div>
-          <div className="grid-item">
-            <Image src={coster3user} alt="user UI" />
-          </div>
-          <div className="grid-item">
-            <Image src={coster3ticket} alt="ticketing UI" />
-          </div>
-          <div className="grid-item">
-            <Image src={coster3template} alt="create template UI" />
-          </div>
+          {costerV3Images.map((row) => (
+            <div className="grid-item" key={row.alt}>
+              <Image
+                src={row.src}
+                alt={row.alt}
+                onClick={() => {
+                  setShowDialog(true)
+                  setImageOptions({
+                    src: row.src,
+                    alt: row.alt,
+                  })
+                }}
+              />
+            </div>
+          ))}
         </Grid>
       </Container>
       <Container as="section" className="project">
@@ -76,17 +88,31 @@ const Works: NextPageWithLayout = () => {
           Vanilla JS as their core technology.
         </Text>
         <Grid>
-          <div className="grid-item">
-            <Image src={coster2report} alt="request report UI" />
-          </div>
-          <div className="grid-item">
-            <Image src={coster2template} alt="create template UI" />
-          </div>
-          <div className="grid-item">
-            <Image src={coster2ticket} alt="ticket logo" />
-          </div>
+          {costerV2Images.map((row) => (
+            <div className="grid-item" key={row.alt}>
+              <Image
+                src={row.src}
+                alt={row.alt}
+                onClick={() => {
+                  setShowDialog(true)
+                  setImageOptions({
+                    src: row.src,
+                    alt: row.alt,
+                  })
+                }}
+              />
+            </div>
+          ))}
         </Grid>
       </Container>
+      <DialogImage
+        open={showDialog}
+        onOpenChange={(val) => setShowDialog(val)}
+        ImageProps={{
+          src: imageOptions.src,
+          alt: imageOptions.alt,
+        }}
+      />
     </Root>
   )
 }
@@ -94,6 +120,52 @@ const Works: NextPageWithLayout = () => {
 Works.getLayout = (page) => <MainLayout>{page}</MainLayout>
 
 export default Works
+
+const costerV3Images = [
+  {
+    src: coster3chatting,
+    alt: "chatting UI",
+  },
+  {
+    src: coster3chart2,
+    alt: "chart UI",
+  },
+  {
+    src: coster3login,
+    alt: "login UI",
+  },
+  {
+    src: coster3chart,
+    alt: "chart UI",
+  },
+  {
+    src: coster3user,
+    alt: "user UI",
+  },
+  {
+    src: coster3ticket,
+    alt: "ticketing UI",
+  },
+  {
+    src: coster3template,
+    alt: "create template UI",
+  },
+]
+
+const costerV2Images = [
+  {
+    src: coster2report,
+    alt: "request report UI",
+  },
+  {
+    src: coster2template,
+    alt: "create template UI",
+  },
+  {
+    src: coster2ticket,
+    alt: "ticket logo",
+  },
+]
 
 const Root = styled("div", {
   margin: "0 1rem",
@@ -123,6 +195,7 @@ const Grid = styled("div", {
       transition: "transform .25s, visibility .25s ease-in",
       filter: "brightness(50%)",
       "&:hover": {
+        cursor: "pointer",
         transform: "scale(1.1)",
       },
     },
