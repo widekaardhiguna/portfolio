@@ -1,4 +1,4 @@
-import { Button, Text, Collapsed, TitlePage } from "components"
+import { Button, Text, Collapsed, TitlePage, Container } from "components"
 import { MainLayout } from "layouts"
 import { NextPageWithLayout } from "pages/_app"
 import { styled } from "theme/config"
@@ -23,7 +23,7 @@ import dockerLogo from "public/logo/docker-logo.png"
 
 const Skills: NextPageWithLayout = () => {
   return (
-    <Root>
+    <Root as={Container}>
       <TitlePage
         title="Skills"
         description="Tools that I use often to support my work"
@@ -262,7 +262,7 @@ const Root = styled("div", {
   "& > .skills": {
     "& > .skill-section": {
       fontSize: "1.3rem",
-      paddingLeft: "1rem",
+      paddingLeft: "0.3rem",
       marginTop: "0.8rem",
       marginBottom: "0.8rem",
     },
