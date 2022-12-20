@@ -1,5 +1,6 @@
 import { Drawer, Portal } from "components"
 import { styled, theme } from "theme/config"
+import { BottomLink } from "../BottomLink"
 import { Nav } from "../Nav"
 import { ProfileCard } from "../ProfileCard"
 
@@ -24,6 +25,7 @@ export const Sidebar = () => {
       <div className="nav-wrapper">
         <Nav />
       </div>
+      <BottomLink />
     </Root>
   )
 }
