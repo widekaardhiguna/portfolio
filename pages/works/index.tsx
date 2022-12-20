@@ -110,11 +110,9 @@ const Root = styled("div", {
 })
 
 const Grid = styled("div", {
-  margin: "0 0rem",
   display: "grid",
-  gridTemplateColumns: "repeat(6, 1fr)",
-  gridTemplateRows: "repeat(4, 200px)",
   gap: "0.6rem",
+  gridTemplateColumns: "repeat(2, 1fr)",
   "& > .grid-item": {
     borderRadius: "5px",
     overflow: "hidden",
@@ -128,22 +126,29 @@ const Grid = styled("div", {
         transform: "scale(1.1)",
       },
     },
-    "&:nth-child(1)": {
-      gridColumn: "1/5",
-      gridRow: "1/3",
-    },
-    "&:nth-child(2)": {
-      gridColumn: "span 2",
-    },
-    "&:nth-child(3)": {
-      gridColumn: "span 2",
-    },
-    "&:nth-child(6)": {
-      gridColumn: "span 2",
-    },
-    "&:nth-child(7)": {
-      gridColumn: "3/-1",
-      gridRow: "3/-1",
+  },
+
+  "@sm": {
+    gridTemplateColumns: "repeat(6, 1fr)",
+    gridTemplateRows: "repeat(4, 200px)",
+    "& > .grid-item": {
+      "&:nth-child(1)": {
+        gridColumn: "1/5",
+        gridRow: "1/3",
+      },
+      "&:nth-child(2)": {
+        gridColumn: "span 2",
+      },
+      "&:nth-child(3)": {
+        gridColumn: "span 2",
+      },
+      "&:nth-child(6)": {
+        gridColumn: "span 2",
+      },
+      "&:nth-child(7)": {
+        gridColumn: "3/-1",
+        gridRow: "3/-1",
+      },
     },
   },
 })
