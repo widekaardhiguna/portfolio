@@ -10,7 +10,7 @@ const Skills: NextPageWithLayout = () => {
       <TitlePage title="Contact" />
       <Container className="contacts">
         <Text as="p" className="contact-desc">
-          You can reach me through these platform
+          You can reach me through these platforms
         </Text>
         <Link
           className="contact-link"
