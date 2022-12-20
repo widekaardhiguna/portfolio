@@ -128,7 +128,7 @@ const costerV3Images = [
   },
   {
     src: coster3chart2,
-    alt: "chart UI",
+    alt: "chart 2 UI",
   },
   {
     src: coster3login,

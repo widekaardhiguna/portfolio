@@ -1,11 +1,11 @@
-import { Button } from "components"
+import { Button, Container } from "components"
 import { MainLayout } from "layouts"
 import { styled } from "theme/config"
 import { NextPageWithLayout } from "pages/_app"
 import Link from "next/link"
 
 const Root = styled("div", {
-  padding: "3rem",
+  padding: "1rem",
   height: "100%",
   display: "grid",
   alignItems: "center",
@@ -25,7 +25,7 @@ const Root = styled("div", {
 
 const Home: NextPageWithLayout = () => {
   return (
-    <Root>
+    <Root as={Container}>
       <div>
         <p className="introduction">
           Hi, I’m Deka
