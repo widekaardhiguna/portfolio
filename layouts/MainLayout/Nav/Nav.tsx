@@ -4,6 +4,7 @@ import Link from "next/link"
 import { styled, theme } from "theme/config"
 import { links } from "./links"
 import { useRouter } from "next/router"
+import useDrawerStore from "stores/useDrawerStore"
 
 const Root = styled("nav", {
   "& > ul": {
@@ -28,6 +29,7 @@ const Root = styled("nav", {
 })
 
 export const Nav = () => {
+  const setShow = useDrawerStore((state) => state.setShow)
   const router = useRouter()
   const firstPath = "/" + router.pathname.split("/")[1]
   return (
@@ -39,6 +41,7 @@ export const Nav = () => {
               <a
                 className="link"
                 data-active={link.href === firstPath || undefined}
+                onClick={() => setShow(false)}
               >
                 {link.name}
               </a>
