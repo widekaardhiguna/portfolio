@@ -9,6 +9,10 @@ export const Button = styled("button", {
   fontSize: "1rem",
   backgroundColor: theme.colors.primary,
   color: theme.colors.dark,
+  "&:hover": {
+    filter: "brightness(80%)",
+    cursor: "pointer",
+  },
   variants: {
     size: {
       small: {

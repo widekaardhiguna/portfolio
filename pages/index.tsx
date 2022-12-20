@@ -2,6 +2,7 @@ import { Button } from "components"
 import { MainLayout } from "layouts"
 import { styled } from "theme/config"
 import { NextPageWithLayout } from "pages/_app"
+import Link from "next/link"
 
 const Root = styled("div", {
   padding: "3rem",
@@ -35,7 +36,9 @@ const Home: NextPageWithLayout = () => {
           Experienced in building high quality and robust web app to help people
           solve their problem.
         </p>
-        <Button>SEE WHAT I&apos;M CAPABLE OF</Button>
+        <Link href="/skills">
+          <Button>SEE WHAT I&apos;M CAPABLE OF</Button>
+        </Link>
       </div>
     </Root>
   )
