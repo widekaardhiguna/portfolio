@@ -13,6 +13,8 @@ interface MainLayoutProps {
 
 const Wrapper = styled("div", {
   backgroundColor: "#404040",
+  background:
+    "linear-gradient(0deg, #404040 0%, #404040 70%, #2b2b2b 70%, #2b2b2b 100%)",
   height: "100vh",
   "& > .container": {
     backgroundColor: theme.colors.background,
