@@ -43,7 +43,7 @@ const Works: NextPageWithLayout = () => {
       />
       <Container as="section" className="project">
         <Text as="h2" className="subtitle">
-          Coster V.3
+          Coster 3
         </Text>
         <Text as="p" className="desc">
           Coster is a <i>Software as a Service</i> (SaaS) which help a company
@@ -78,14 +78,14 @@ const Works: NextPageWithLayout = () => {
       </Container>
       <Container as="section" className="project">
         <Text as="h2" className="subtitle">
-          Coster V.2
+          Coster 2
         </Text>
         <Text as="p" className="desc">
-          Coster V.2 is similar to Coster V.3 but its an On-Premise application
-          with lesser and smaller features. I did the Front End works on this
-          product and built it from 0 to a fully functional application. The
-          frontend application use Laravel (for proxying API request) and
-          Vanilla JS as their core technology.
+          Coster 2 is similar to Coster 3 but its an On-Premise application with
+          lesser and smaller features. I did the Front End works on this product
+          and built it from 0 to a fully functional application. The frontend
+          application use Laravel (for proxying API request) and Vanilla JS as
+          their core technology.
         </Text>
         <Grid>
           {costerV2Images.map((row) => (

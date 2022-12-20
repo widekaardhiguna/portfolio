@@ -23,4 +23,30 @@ export const globalStyles = globalCss({
   "*": {
     color: theme.colors.light,
   },
+  /* width */
+  "::-webkit-scrollbar": {
+    width: "0.4rem",
+    height: "0.4rem",
+  },
+  "@media only screen and (max-width: 600px)": {
+    "::-webkit-scrollbar": {
+      width: "0.15rem",
+    },
+  },
+
+  /* Track */
+  "::-webkit-scrollbar-track": {
+    background: "#f1f1f100",
+  },
+
+  /* Handle */
+  "::-webkit-scrollbar-thumb": {
+    background: "rgba(136, 136, 136, 0.5)",
+    borderRadius: "0.2rem",
+  },
+
+  /* Handle on hover */
+  "::-webkit-scrollbar-thumb:hover": {
+    background: "rgba(136, 136, 136, 0.9)",
+  },
 })

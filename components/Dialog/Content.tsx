@@ -1,5 +1,10 @@
 import * as Dialog from "@radix-ui/react-dialog"
-import { styled, theme } from "theme/config"
+import { styled, theme, keyframes } from "theme/config"
+
+const contentShow = keyframes({
+  "0%": { opacity: 0, transform: "translate(-50%, -48%) scale(.96)" },
+  "100%": { opacity: 1, transform: "translate(-50%, -50%) scale(1)" },
+})
 
 export const Content = styled(Dialog.Content, {
   backgroundColor: theme.colors.dark.value,
@@ -14,6 +19,6 @@ export const Content = styled(Dialog.Content, {
   maxWidth: "900px",
   maxHeight: "85vh",
   // padding: 25,
-  // animation: `${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
+  animation: `${contentShow} 300ms cubic-bezier(0.16, 1, 0.3, 1)`,
   "&:focus": { outline: "none" },
 })
