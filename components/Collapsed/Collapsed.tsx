@@ -1,5 +1,5 @@
 import colorAlpha from "color-alpha"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { styled, theme } from "theme/config"
 import { IconChevronLeft } from "@tabler/icons"
 
@@ -40,27 +40,34 @@ const Root = styled("div", {
     },
   },
   "& > .body": {
-    display: "none",
-    [`&[data-show]`]: {
-      display: "block",
-    },
+    overflow: "hidden",
+    transition: "height 0.25s ease",
   },
 })
 
 export const Collapsed = ({ icon, title, body }: CollapsedProps) => {
-  const [show, setShow] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+
+  const contentRef = useRef<HTMLDivElement>(null)
 
   return (
     <Root>
-      <button className="head" onClick={() => setShow((prev) => !prev)}>
+      <button className="head" onClick={() => setIsOpen((prev) => !prev)}>
         {icon}
         <span className="text">{title}</span>
         <IconChevronLeft
           className="icon-collapsed"
-          data-show={show || undefined}
+          data-show={isOpen || undefined}
         />
       </button>
-      <div className="body" data-show={show || undefined}>
+      <div
+        className="body"
+        // data-show={isOpen || undefined}
+        ref={contentRef}
+        style={{
+          height: isOpen ? contentRef.current?.scrollHeight + "px" : "0px",
+        }}
+      >
         {body}
       </div>
     </Root>
