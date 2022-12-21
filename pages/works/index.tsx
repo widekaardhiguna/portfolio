@@ -48,9 +48,9 @@ const Works: NextPageWithLayout = () => {
         <Text as="p" className="desc">
           Coster is a <i>Software as a Service</i> (SaaS) which help a company
           having better communication with their customer through multi channel
-          like WhatsApp, Email, Instagram, etc in a single platform. Coster
-          consist of several sub applications which are independent but can work
-          together to achieve its purpose.
+          like WhatsApp, Email, Instagram, etc in a single platform. Coster is a
+          large application that splitted into several sub applications which
+          are independent but can work together to achieve its purpose.
         </Text>
         <Text as="p" className="desc">
           I&apos;m the Front End developer of this product and built it from 0

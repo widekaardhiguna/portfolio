@@ -17,7 +17,7 @@ const Root = styled("div", {
   },
   "& .description": {
     fontSize: "1.2rem",
-    maxWidth: "60ch",
+    maxWidth: "45ch",
     lineHeight: 1.6,
     margin: "0 0 3rem 0",
   },
@@ -33,8 +33,8 @@ const Home: NextPageWithLayout = () => {
           Front End Developer
         </p>
         <p className="description">
-          Experienced in building high quality and robust web app to help people
-          solve their problem.
+          Build your web app more scalable and robust with great user
+          experience.
         </p>
         <Link href="/skills">
           <Button>SEE WHAT I&apos;M CAPABLE OF</Button>
