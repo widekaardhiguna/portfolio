@@ -10,6 +10,8 @@ export default function Document() {
           id="stitches"
           dangerouslySetInnerHTML={{ __html: getCssText() }}
         />
+        <meta property="og:title" content="Wideka Ardhiguna Portfolio" />
+        <meta property="og:image" content="/thumbnail.png" />
       </Head>
       <body>
         <Main />
