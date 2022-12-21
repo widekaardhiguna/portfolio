@@ -47,16 +47,15 @@ const Works: NextPageWithLayout = () => {
         </Text>
         <Text as="p" className="desc">
           Coster is a <i>Software as a Service</i> (SaaS) which help a company
-          having better communication with their customer. With Coster, user can
-          communicate with their customer through multi channel like WhatsApp,
-          Email, Instagram, etc in a single platform. Coster consist of 4 sub
-          applications, we named them accounts, helpdesk, broadcast, and chatbot
-          which are independent but can work together to achieve its purpose.
+          having better communication with their customer through multi channel
+          like WhatsApp, Email, Instagram, etc in a single platform. Coster
+          consist of several sub applications which are independent but can work
+          together to achieve its purpose.
         </Text>
         <Text as="p" className="desc">
-          I&apos;m the main Front End developer of this product and built it
-          from 0 to a fully functional application. The frontend application use
-          React, Node JS (as proxy), and Typescript as their core technology.
+          I&apos;m the Front End developer of this product and built it from 0
+          to a fully functional application. The frontend application use React,
+          Node JS (as proxy), and Typescript as their core technology.
         </Text>
         <Grid>
           {costerV3Images.map((row) => (
