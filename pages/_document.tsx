@@ -11,10 +11,10 @@ export default function Document() {
           dangerouslySetInnerHTML={{ __html: getCssText() }}
         />
         <meta property="og:title" content="Wideka Ardhiguna Portfolio" />
-        <meta property="og:url" content="https://deka-dev.vercel.app" />
+        <meta property="og:url" content="https://wideka-dev.vercel.app" />
         <meta
           property="og:image"
-          content="https://deka-dev.vercel.app/thumbnail.png"
+          content="https://wideka-dev.vercel.app/thumbnail.png"
         />
         <meta property="og:image:width" content="1400" />
         <meta property="og:image:height" content="900" />
