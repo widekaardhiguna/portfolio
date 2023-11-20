@@ -22,6 +22,14 @@ import coster2template from "public/projects/coster_v2/template.png"
 import coster2ticket from "public/projects/coster_v2/ticket.png"
 import coster2report from "public/projects/coster_v2/report.png"
 
+import chatbotStudioEditor from "public/projects/chatbot_studio/editor.png"
+import chatbotStudioSimulator from "public/projects/chatbot_studio/simulator.png"
+import chatbotStudioList from "public/projects/chatbot_studio/list.png"
+
+import nonogramDifficulties from "public/projects/nonogram/difficulties.png"
+import nonogramHome from "public/projects/nonogram/home.png"
+import nonogramStage from "public/projects/nonogram/stage.png"
+
 import { useState } from "react"
 
 type ImageOptions = {
@@ -42,9 +50,9 @@ const Works: NextPageWithLayout = () => {
         description="Projects that I had experience with"
       />
       <Container as="section" className="project">
-        <Text as="h2" className="subtitle">
-          Coster 3
-        </Text>
+        <ProjectTitle as="h2" className="subtitle">
+          # Coster 3
+        </ProjectTitle>
         <Text as="p" className="desc">
           Coster is a <i>Software as a Service</i> (SaaS) which help a company
           having better communication with their customer through multi channel
@@ -57,7 +65,7 @@ const Works: NextPageWithLayout = () => {
           to a fully functional application. The frontend application use React,
           Node JS (as proxy), and Typescript as their core technology.
         </Text>
-        <Grid>
+        <Grid6>
           {costerV3Images.map((row) => (
             <div className="grid-item" key={row.alt}>
               <Image
@@ -73,12 +81,87 @@ const Works: NextPageWithLayout = () => {
               />
             </div>
           ))}
-        </Grid>
+        </Grid6>
       </Container>
       <Container as="section" className="project">
-        <Text as="h2" className="subtitle">
-          Coster 2
+        <ProjectTitle as="h2" className="subtitle">
+          # Chatbot Studio
+        </ProjectTitle>
+        <Text as="p" className="desc">
+          Chatbot Studio is a web application designed to facilitate the
+          creation of conversational flows between customer service
+          representatives and their clients. Prior to being routed to the
+          customer service team, incoming tickets undergo initial processing by
+          the chatbot, thereby significantly alleviating the workload on the
+          customer service staff.
         </Text>
+        <Text as="p" className="desc">
+          I'm the Front End developer of this product. The frontend application
+          was made using React, Node JS (as proxy), and Typescript as their core
+          technology.
+        </Text>
+        <Grid3>
+          {chatbotStudioImages.map((row) => (
+            <div className="grid-item" key={row.alt}>
+              <Image
+                src={row.src}
+                alt={row.alt}
+                onClick={() => {
+                  setShowDialog(true)
+                  setImageOptions({
+                    src: row.src,
+                    alt: row.alt,
+                  })
+                }}
+              />
+            </div>
+          ))}
+        </Grid3>
+      </Container>
+      <Container as="section" className="project">
+        <ProjectTitle as="h2" className="subtitle">
+          # Nonogram
+        </ProjectTitle>
+        <Text as="p" className="desc">
+          A Nonogram, also known as Picross or Griddlers, is a puzzle game where
+          players fill in cells on a grid based on numerical clues. The clues
+          indicate the sequence of filled cells in each row and column,
+          challenging players to use deductive reasoning to complete the grid
+          and uncover the image. You can play the game through this link{" "}
+          <a href="https://nono-gram.vercel.app/" target="_blank">
+            https://nono-gram.vercel.app
+          </a>
+          .
+        </Text>
+        <Text as="p" className="desc">
+          This is a my personal project I’m currently working in alone and it is
+          still in development stage, so there still a lot of thing need to be
+          polished. The app/game is fully operated at client side with no
+          backend. The app was made using React, Next JS, and Typescript as
+          their core technology.
+        </Text>
+        <Grid3>
+          {nonogramImages.map((row) => (
+            <div className="grid-item" key={row.alt}>
+              <Image
+                src={row.src}
+                alt={row.alt}
+                onClick={() => {
+                  setShowDialog(true)
+                  setImageOptions({
+                    src: row.src,
+                    alt: row.alt,
+                  })
+                }}
+              />
+            </div>
+          ))}
+        </Grid3>
+      </Container>
+      <Container as="section" className="project">
+        <ProjectTitle as="h2" className="subtitle">
+          # Coster 2
+        </ProjectTitle>
         <Text as="p" className="desc">
           Coster 2 is similar to Coster 3 but its an On-Premise application with
           lesser and smaller features. I did the Front End works on this product
@@ -86,7 +169,7 @@ const Works: NextPageWithLayout = () => {
           application use Laravel (for proxying API request) and Vanilla JS as
           their core technology.
         </Text>
-        <Grid>
+        <Grid3>
           {costerV2Images.map((row) => (
             <div className="grid-item" key={row.alt}>
               <Image
@@ -102,7 +185,7 @@ const Works: NextPageWithLayout = () => {
               />
             </div>
           ))}
-        </Grid>
+        </Grid3>
       </Container>
       <DialogImage
         open={showDialog}
@@ -166,10 +249,44 @@ const costerV2Images = [
   },
 ]
 
+const chatbotStudioImages = [
+  {
+    src: chatbotStudioEditor,
+    alt: "bot editor UI",
+  },
+  {
+    src: chatbotStudioSimulator,
+    alt: "bot simulator UI",
+  },
+  {
+    src: chatbotStudioList,
+    alt: "bot list UI",
+  },
+]
+
+const nonogramImages = [
+  {
+    src: nonogramHome,
+    alt: "nonogram home UI",
+  },
+  {
+    src: nonogramStage,
+    alt: "nonogram stage UI",
+  },
+  {
+    src: nonogramDifficulties,
+    alt: "nonogram difficulties UI",
+  },
+]
+
+const ProjectTitle = styled(Text, {
+  marginBottom: "0.5rem",
+})
+
 const Root = styled("div", {
   margin: "0 1rem",
   "& > .project": {
-    marginBottom: "2rem",
+    marginBottom: "4rem",
     "& > .subtitle": {
       fontSize: "1.4rem",
     },
@@ -199,7 +316,30 @@ const Grid = styled("div", {
       },
     },
   },
+})
 
+const Grid3 = styled(Grid, {
+  "@sm": {
+    gridTemplateColumns: "repeat(6, 1fr)",
+    gridTemplateRows: "repeat(4, 200px)",
+    "& > .grid-item": {
+      "&:nth-child(1)": {
+        gridColumn: "1/7",
+        gridRow: "1/3",
+      },
+      "&:nth-child(2)": {
+        gridColumn: "span 3",
+        gridRow: "span 2",
+      },
+      "&:nth-child(3)": {
+        gridColumn: "span 3",
+        gridRow: "span 2",
+      },
+    },
+  },
+})
+
+const Grid6 = styled(Grid, {
   "@sm": {
     gridTemplateColumns: "repeat(6, 1fr)",
     gridTemplateRows: "repeat(4, 200px)",
