@@ -128,7 +128,11 @@ const Works: NextPageWithLayout = () => {
           indicate the sequence of filled cells in each row and column,
           challenging players to use deductive reasoning to complete the grid
           and uncover the image. You can play the game through this link{" "}
-          <a href="https://nono-gram.vercel.app/" target="_blank">
+          <a
+            href="https://nono-gram.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+          >
             https://nono-gram.vercel.app
           </a>
           .
