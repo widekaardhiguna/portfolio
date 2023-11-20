@@ -96,9 +96,9 @@ const Works: NextPageWithLayout = () => {
           customer service staff.
         </Text>
         <Text as="p" className="desc">
-          I'm the Front End developer of this product. The frontend application
-          was made using React, Node JS (as proxy), and Typescript as their core
-          technology.
+          I&apos;m the Front End developer of this product. The frontend
+          application was made using React, Node JS (as proxy), and Typescript
+          as their core technology.
         </Text>
         <Grid3>
           {chatbotStudioImages.map((row) => (
